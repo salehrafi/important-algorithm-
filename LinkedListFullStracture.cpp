@@ -26,7 +26,16 @@ void Insert_node_at_font(Node* &head, int data){
     newNode->next = head;
     head = newNode;
 }
+void Insert_node_at_back(Node* head,int data){
+    Node* newNode = new Node(data);
+    Node* temp;
+    temp = head;
 
+    while(temp->next !=NULL){
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
 int main(){
     Node* head = new Node(10);    
     Node* a = new Node(30);    
@@ -36,6 +45,8 @@ int main(){
     a->next = b;
 
     Insert_node_at_font(head, 5);
+    Insert_node_at_back(head,40);
+    Insert_node_at_back(head,50);
     Print_Linked_list(head);
 
     return 0;
